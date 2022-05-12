@@ -2,7 +2,7 @@
 
 docker compose down;
 
-# docker volume rm -f mysql-compose_datadir;
+# docker volume rm -f mysql-compose_mysql_datadir;
 
 docker compose build --no-cache;
 

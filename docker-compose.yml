@@ -11,7 +11,7 @@ services:
       MYSQL_USER: ${MYSQL_USER:-admin}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD:-admin}
     volumes:
-      - datadir:/my/own/datadir
+      - mysql_datadir:/var/lib/mysql
       - ${MYSQL_CONFIG_DIR:-./.config/mysql}/sql/30_mysql_initdb.sh:/docker-entrypoint-initdb.d/30_mysql_initdb.sh
     ports:
       - "${MYSQL_PORT:-3306}:3306"
@@ -38,4 +38,4 @@ networks:
     driver: bridge
 
 volumes:
-  datadir: # external: true
+  mysql_datadir: # external: true
